@@ -1,13 +1,34 @@
-# Dirk's Sensors for PRTG Network Monitor
+# Script for ioBroker for monitoring Zehnder Comfoair q-Series
 
-A small collection of sensor scripts for PRTG Network Monitor (a monitoring software from www.paessler.com)
+Thanks to Dirk Paessler and the Team of PRTG. i found their implementation for monitoring Zehnder Comfoair q-Series Ventilation Systems and adapted it for ioBroker.
 
-Here you can find scripts that can be used as custom sensor for PRTG
+It makes use of the Open Source library PyComfoConnect found here: https://github.com/michaelarnauts/comfoconnect 
 
-* Modbus Monitoring - Basic Sample Script (Powershell)
-* Modbus Monitoring - SMA Photovoltaic Systems (Powershell) works with SMA Sunny Tripower 5000TL-12000TL and a SMA Sunny Island 4.4M / 6.0H / 8.0H
-* Modbus Monitoring - AIT Heatpump (Powershell) works with heatpump Alpha Innotec (AIT) SWC 25  
-* Zehnder ComfoAir Q Ventilation Systems (Python)
-* Enumerate Wifi Networks (Powershell)
+One requirement is ti install this library.
+
+In ioBroker i use the Adapter Simple RESTful API to write the values into the database.
 
 
+
+The py-script needs to run on somewhere in the network. I am running it on the ioBroker-Server itself. 
+
+I am using Cron and run it every 5 minutes. I added a value "last update", that is not really necessary as ioBroker has a compareable value itself. The script also writes all values to a file zehnder.json. I use that also for debugging.
+
+
+
+I am trying to add the Counter that shows the next "programm-switch", but until now i wasn't able to figure out what type of values is delivered from the comfoair Q.
+
+
+
+To use it, you have to enter the following values:
+
+- comfoconnect_ip: IP of comfoconnect lan-c
+- comfoconnect_pin: PIN of comfoconnect lan-c
+- ioBroker: IP-Address:port of ioBroker
+- if you want another path inside ioBroker you should also change dp 
+
+
+
+As last point, i am not an experienced coder, so this could be done much better and more effective. also error handling is... well basically it shows the error if one occurs...
+
+Feel free to improve it and share it with the community.
