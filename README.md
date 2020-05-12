@@ -4,7 +4,7 @@ Thanks to Dirk Paessler and the Team of PRTG. i found their implementation for m
 
 It makes use of the Open Source library PyComfoConnect found here: https://github.com/michaelarnauts/comfoconnect 
 
-One requirement is ti install this library.
+One requirement is to install this library.
 
 In ioBroker i use the Adapter Simple RESTful API to write the values into the database.
 
@@ -32,3 +32,11 @@ To use it, you have to enter the following values:
 As last point, i am not an experienced coder, so this could be done much better and more effective. also error handling is... well basically it shows the error if one occurs...
 
 Feel free to improve it and share it with the community.
+
+
+
+Currently it is not possible to do write/set-operations.
+
+
+
+It is only tested on comfoair q 350. 
